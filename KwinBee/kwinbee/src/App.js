@@ -1,13 +1,13 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import NavLink from './component/navlink';
-import Introduction from './component/introduction';
-import ReasonsComponent from './component/reason';
-import CourseSection from './component/course';
-import AchieversSection from './component/achive';
-import MentorSection from './component/mentorsection';
-import ReviewsSection from './component/review';
-import Footer from './component/footer';
+import NavLink from './component/navlink/navlink';
+import Introduction from './component/interoduction/introduction';
+import ReasonsComponent from './component/reason/reason';
+import CourseSection from './component/cource/course';
+import AchieversSection from './component/achivers/achive';
+import MentorSection from './component/mentorsection/mentorsection';
+import ReviewsSection from './component/review/review';
+import Footer from './component/footer/footer';
 import WHATSAPP from './component/whatsapp-400.png'; // Import the WhatsApp image
 
 function App() {
