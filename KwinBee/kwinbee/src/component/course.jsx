@@ -2,7 +2,9 @@ import React from 'react';
 import './course.css';
 import BASIC from './basic.png';
 import INTERMEIDATE from './intermeidate.png';
-import advanced from './advanced.png';
+import ADVANCED from './advanced.png';
+import EMAIL from './email-256.png';
+import WHATSAPP from './whatsapp-400.png';
 
 const CourseSection = () => {
     return (
@@ -30,13 +32,13 @@ const CourseSection = () => {
                     <div className="packcon">
                         <a className="packmail" href="mailto:chess@kwinbee.com?subject=Pawn%20Course%20Query" target="_blank">
                             <div className="mailbutt">
-                                <img src="email-256.png" alt="Email" />
+                                <img src={EMAIL} alt="Email" />
                                 <h6>Mail</h6>
                             </div>
                         </a>
                         <a className="packwh" href="https://wa.link/weua1t" target="_blank">
                             <div className="whatbutt">
-                                <img src="whatsapp-400.png" alt="WhatsApp" />
+                                <img src={WHATSAPP} alt="WhatsApp" />
                                 <h6>WhatsApp</h6>
                             </div>
                         </a>
@@ -64,13 +66,13 @@ const CourseSection = () => {
                     <div className="packcon">
                         <a className="packmail" href="mailto:chess@kwinbee.com?subject=Bishop%20Course%20Query" target="_blank">
                             <div className="mailbutt">
-                                <img src="email-256.png" alt="Email" />
+                                <img src={EMAIL} alt="Email" />
                                 <h6>Mail</h6>
                             </div>
                         </a>
                         <a className="packwh" href="https://wa.link/weua1t" target="_blank">
                             <div className="whatbutt">
-                                <img src="whatsapp-400.png" alt="WhatsApp" />
+                                <img src={WHATSAPP} alt="WhatsApp" />
                                 <h6>WhatsApp</h6>
                             </div>
                         </a>
@@ -79,7 +81,7 @@ const CourseSection = () => {
 
                 {/* Queen Package */}
                 <div className="package-card123">
-                    <img src={advanced} alt="Advanced Package" />
+                    <img src={ADVANCED} alt="Advanced Package" />
                     <div className="package-info123">
                         <h3>Queen</h3>
                         <ul className="bullet-points123">
@@ -98,13 +100,13 @@ const CourseSection = () => {
                     <div className="packcon">
                         <a className="packmail" href="mailto:chess@kwinbee.com?subject=Queen%20Course%20Query" target="_blank">
                             <div className="mailbutt">
-                                <img src="email-256.png" alt="Email" />
+                                <img src={EMAIL} alt="Email" />
                                 <h6>Mail</h6>
                             </div>
                         </a>
                         <a className="packwh" href="https://wa.link/weua1t" target="_blank">
                             <div className="whatbutt">
-                                <img src="whatsapp-400.png" alt="WhatsApp" />
+                                <img src={WHATSAPP} alt="WhatsApp" />
                                 <h6>WhatsApp</h6>
                             </div>
                         </a>

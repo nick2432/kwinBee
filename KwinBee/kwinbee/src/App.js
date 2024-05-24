@@ -8,6 +8,7 @@ import AchieversSection from './component/achive';
 import MentorSection from './component/mentorsection';
 import ReviewsSection from './component/review';
 import Footer from './component/footer';
+import WHATSAPP from './component/whatsapp-400.png'; // Import the WhatsApp image
 
 function App() {
   const [display, setDisplay] = useState('none');
@@ -15,7 +16,7 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
-      // Adjust the condition to your needs, e.g., when scrolling down 200px
+      // Adjust the condition to your needs, e.g., when scrolling down 1000px
       if (scrollY > 1000) {
         setDisplay('flex');
       } else {
@@ -44,7 +45,7 @@ function App() {
 
       <div className="contact-button" style={{ display: display }}>
         <a href="https://wa.link/weua1t" target="_blank" rel="noopener noreferrer">
-          <img src="whatsapp-400.png" alt="WhatsApp Logo for WhatsApp button" />
+          <img src={WHATSAPP} alt="WhatsApp Logo for WhatsApp button" />
           <strong>BOOK A DEMO</strong>
         </a>
       </div>
