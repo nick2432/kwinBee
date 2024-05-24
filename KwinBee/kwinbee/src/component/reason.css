@@ -1,0 +1,73 @@
+/* Add your existing styles here */
+
+/* Styles for the new reason cards section */
+#reasons-section {
+    background-image: url(#pawnbg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    
+    
+}
+
+#reasons-section h2{
+    color:#521d02;
+    margin-top: 60px;
+    align-self: flex-start;
+}
+.reason {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Center the items horizontally */
+    align-items: center;
+}
+.reason-card {
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.3); /* Transparent white with opacity */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    place-self: center;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 5px 10px #521d02;
+    position: relative;
+    width: 400px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    /* Alternatively, you can use 'aspect-ratio' if supported */
+    aspect-ratio: 1/1; /* Maintain a 1:1 aspect ratio */
+}
+
+.reason-card img {
+    
+    width: 64px; /* Adjust logo width as needed */
+    height: 64px; /* Adjust logo height as needed */
+    margin-bottom: 10px;
+}
+
+.reason-card h3 {
+    color: #521d02; /* Your desired text color */
+    font-size: 1.2em;
+    padding-left: 10px;
+}
+
+/* Additional styles for responsiveness */
+/* Additional styles for responsiveness */
+@media (max-width: 1290px) {
+    .reason {
+        align-items: center;
+        align-content: center;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust column width for smaller screens */
+        grid-gap: auto;
+        padding-right: 35px;
+        width: 100%/* Adjust the gap between items */
+    }
+
+    .reason-card {
+        grid-column: span 2;
+        width: 90%;/* Adjust card width for smaller screens */
+    }
+}

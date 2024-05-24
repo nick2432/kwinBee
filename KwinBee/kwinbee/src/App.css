@@ -1,0 +1,375 @@
+
+
+.underlined {
+  position: relative;
+  display: inline-block;
+}
+
+.underlined::after {
+  content: '';
+  position: absolute;
+  width: 50%; /* Start from 0 width to grow from center */
+  height: 5px; /* Adjust the thickness of the underline as needed */
+  background-color: #fcab26; /* Underline color */
+  top: 40px; /* Adjust the distance from the text */
+  right: 50%; /* Start from the center */
+  transition: all 0.3s ease; /* Smooth transition for width and horizontal positioning */
+}
+
+.underlined:hover::after {
+  width: 100%; /* Expand the underline to full width on hover */
+  right: 0%; /* Reset left to start expansion from the full width of the element */
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* Introduction Section Styles */
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-weight: 1000;
+  line-height: 1.2;
+  color: var(--bs-heading-color);
+}
+.h1, h1 {
+  font-size: calc(1.2rem + 1.2vw);
+}
+
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  
+}
+
+#overlay img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.09; /* Adjust the opacity to control the image transparency */
+}
+
+
+
+
+.stat-items p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stat-items h2 {
+  font-weight: bold;
+  font-size: 72px;
+  color: rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  margin: 0;
+}
+
+.stat-items p {
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 24px; /* Adjust as needed */
+  margin: 0;
+}
+
+/*-----change from here---*/
+#introduction .intro-text {
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+
+  text-align: left;
+  overflow: hidden; /* Hide overflow to prevent scrollbar */
+  white-space: nowrap; /* Prevent wrapping */
+ /* border-right: 2px solid; /* Create typing cursor effect */
+  
+  
+  /* Adjusted for smoother animation and added cursor blink */
+}
+
+/* Typing animation keyframes (no change needed unless you want to adjust the typing speed or effect) */
+#chesspiece img{
+  height: 300px;
+
+}
+#herocol{
+  margin-top: 55px;
+display: flex;
+z-index: 25;
+justify-content: space-evenly;
+  width: 90%;
+  }
+
+
+.animated-image {
+opacity: 0; /* Start with the image hidden */
+animation: rotateEntry 2s ease-in-out forwards; /* Apply the rotation animation */
+}
+
+@keyframes rotateEntry {
+0% {
+  transform: translateX(0) rotate(180deg) translateY(100px); /* Start position off-screen */
+  opacity: 0; /* Start with opacity 0 */
+}
+100% {
+  transform: translateX(0) rotate(0) translateY(0); /* End position in view */
+  opacity: 1; /* Fade in */
+}
+}
+.intro-text h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+   color: white;
+}
+.bookme{
+  text-align: right;
+  padding-right: 12px;
+  border-right: 8px solid white;
+  white-space: nowrap;
+  
+}
+.bookme h1 {
+  margin-bottom: 37px; /* Add margin-bottom to create space between lines */
+}
+
+.bookme p {
+  margin-bottom: 37px; /* Add margin-bottom to create space between lines */
+}
+
+
+
+/* Floating Contact Button Styles */
+.bookme-button {
+  text-align: center;
+  background-color: #000; /* Yellow */
+  color: #fff; /* Brown */
+  border: 3px solid #fff;
+  padding: 15px 30px; /* Adjust padding to fit text snugly */
+  filter: brightness(110%);
+  border-radius: 10px;
+  display: inline-block; /* Change to inline-block to fit content */
+  opacity: 1.0;
+  align-items: center;
+  z-index: 5;
+}
+
+
+.bookme-button a {
+  color: #fff; /* Brown */
+  text-decoration:none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+#introduction p {
+  font-size: 1.5em;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+/* Packages Section Styles */
+
+
+
+/* Learners Achievers Section Styles */
+
+
+
+
+
+/* Social Media Links Section Styles */
+
+/* Contact Us Section Styles */
+
+
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-around;
+  
+  
+}
+
+.footer-section {
+  max-width: 220px;
+  margin: 10px; /* Add some margin between sections */
+}
+
+.footer-section img{
+  height: 20px;
+  width: 20px;
+}
+
+.footer-section h3 {
+  color: #422110; /* Accent color: Brown */
+}
+
+.footer-section p {
+  color: #555; /* Secondary accent color: Dark Green */
+  font-size: 14px; /* Adjust font size for smaller screens */
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 5px;
+  
+}
+.footer-section a {
+  text-decoration: none;
+  color: #422110; /* Accent color: Brown */
+}
+
+.footer-section a:hover {
+  color: #b60000; /* Call-to-action color: Red */
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  /* ... (Previous mobile styles) */
+  .stat{
+      flex-direction: column;
+   /* Center horizontally */
+  justify-content:center;
+  padding: 10px;
+      
+
+}
+  #introduction {
+      height: 100vh;
+  }
+  /* Set max-width for mobile */
+
+  /* Header */
+  header {
+      padding: 10px;
+  }
+  #overlay img {
+  width: auto;
+  height: 100vh;
+  opacity: 0.09; /* Adjust the opacity to control the image transparency */
+}
+  /* Introduction Section */
+  #introduction h1 {
+      font-size: 1.8em;
+  }
+
+  #introduction p {
+      font-size: 1em;
+  }
+
+  /* Packages Section */
+  
+  /* Achievers Section */
+ 
+  /* CEO Section */
+
+}
+/* src/component/FixedButton.css */
+
+.contact-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fcab26; /* Yellow */
+  color: #422110; /* Brown */
+  border: 3px solid #521d02;
+  padding:4px;
+  padding: 10px;
+  filter: brightness(110%);
+  border-radius: 10px;
+  display: none;
+  opacity: 1.0;
+  align-items: center;
+  z-index: 5;
+}
+
+.contact-button a {
+  color: #422110; /* Brown */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.contact-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+  .stat {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+  }
+
+  .stat-items {
+      margin-left: 0;
+      margin-top: 20px; /* Adjust spacing between items */
+  }
+  
+  .stat-items h2 {
+      font-size: 36px;
+      color: white;
+      -webkit-text-stroke-width: 0px;
+  }
+
+  .stat-items p {
+      font-size: 24px;
+      font-weight: 400;
+  }
+}
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+  #herocol {
+      flex-direction: column;
+      align-items: center;
+  }
+#chesspiece img{
+  display:none;
+
+}
+  /* Adjust the size of each component */
+  #herocol .intro-text h1 {
+      font-size: 1.5em; /* Adjust the font size */
+  }
+
+  #herocol .intro-text p {
+      font-size: 1em; /* Adjust the font size */
+  }
+
+  #herocol .bookme {
+      align-self: flex-end;
+      margin-top: 20px; /* Adjust spacing between components */
+      font-size: 0.8em; /* Adjust the font size */
+  }
+
+  #herocol .bookme h1 {
+      font-size: 1.5em; /* Adjust the font size */
+  }
+
+  .bookme-button {
+      padding: 8px; /* Adjust padding */
+  }
+}
