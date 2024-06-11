@@ -1,5 +1,5 @@
 
-
+.
 .underlined {
   position: relative;
   display: inline-block;
@@ -56,49 +56,7 @@
 
 
 
-.stat-items p {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.stat-items h2 {
-  font-weight: bold;
-  font-size: 72px;
-  color: rgba(255, 255, 255, 0.1);
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: white;
-  margin: 0;
-}
-
-.stat-items p {
-  font-weight: bold;
-  letter-spacing: 1px;
-  font-size: 24px; /* Adjust as needed */
-  margin: 0;
-}
-
-/*-----change from here---*/
-#introduction .intro-text {
-  z-index: 12;
-  display: flex;
-  flex-direction: column;
-  justify-content:space-between;
-
-  text-align: left;
-  overflow: hidden; /* Hide overflow to prevent scrollbar */
-  white-space: nowrap; /* Prevent wrapping */
- /* border-right: 2px solid; /* Create typing cursor effect */
-  
-  
-  /* Adjusted for smoother animation and added cursor blink */
-}
-
 /* Typing animation keyframes (no change needed unless you want to adjust the typing speed or effect) */
-#chesspiece img{
-  height: 300px;
-
-}
 #herocol{
   margin-top: 55px;
 display: flex;
@@ -171,9 +129,6 @@ animation: rotateEntry 2s ease-in-out forwards; /* Apply the rotation animation 
 
 
 
-#introduction p {
-  font-size: 1.5em;
-}
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
@@ -242,46 +197,7 @@ footer {
 }
 
 /* Mobile-first responsive design */
-@media (max-width: 768px) {
-  /* ... (Previous mobile styles) */
-  .stat{
-      flex-direction: column;
-   /* Center horizontally */
-  justify-content:center;
-  padding: 10px;
-      
 
-}
-  #introduction {
-      height: 100vh;
-  }
-  /* Set max-width for mobile */
-
-  /* Header */
-  header {
-      padding: 10px;
-  }
-  #overlay img {
-  width: auto;
-  height: 100vh;
-  opacity: 0.09; /* Adjust the opacity to control the image transparency */
-}
-  /* Introduction Section */
-  #introduction h1 {
-      font-size: 1.8em;
-  }
-
-  #introduction p {
-      font-size: 1em;
-  }
-
-  /* Packages Section */
-  
-  /* Achievers Section */
- 
-  /* CEO Section */
-
-}
 /* src/component/FixedButton.css */
 
 .contact-button {
@@ -317,59 +233,3 @@ footer {
 
 
 /* Mobile Styles */
-@media only screen and (max-width: 768px) {
-  .stat {
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-  }
-
-  .stat-items {
-      margin-left: 0;
-      margin-top: 20px; /* Adjust spacing between items */
-  }
-  
-  .stat-items h2 {
-      font-size: 36px;
-      color: white;
-      -webkit-text-stroke-width: 0px;
-  }
-
-  .stat-items p {
-      font-size: 24px;
-      font-weight: 400;
-  }
-}
-/* Mobile Styles */
-@media only screen and (max-width: 768px) {
-  #herocol {
-      flex-direction: column;
-      align-items: center;
-  }
-#chesspiece img{
-  display:none;
-
-}
-  /* Adjust the size of each component */
-  #herocol .intro-text h1 {
-      font-size: 1.5em; /* Adjust the font size */
-  }
-
-  #herocol .intro-text p {
-      font-size: 1em; /* Adjust the font size */
-  }
-
-  #herocol .bookme {
-      align-self: flex-end;
-      margin-top: 20px; /* Adjust spacing between components */
-      font-size: 0.8em; /* Adjust the font size */
-  }
-
-  #herocol .bookme h1 {
-      font-size: 1.5em; /* Adjust the font size */
-  }
-
-  .bookme-button {
-      padding: 8px; /* Adjust padding */
-  }
-}
