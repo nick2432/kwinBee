@@ -65,8 +65,9 @@ const Introduction = () => {
           {/* Render empbox or the 3D scene based on animationComplete state */}
           {!animationComplete ? (
             <div className='empbox'>
-              <p>Loading...</p>
-            </div>
+  <div className="loader"></div>
+</div>
+
           ) : (
             <Scene mousePosition={mousePosition} /> // Render the 3D scene
           )}
