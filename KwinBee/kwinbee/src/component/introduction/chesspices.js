@@ -60,14 +60,14 @@ const Scene = () => {
   }, []);
 
   return (
-    <Canvas camera={{ position: [0, 5, 10], fov: 50 }} style={{ width: '54%', height: '20vw' }}>
+    <Canvas camera={{ position: [0, 5, 10], fov: 50 }} style={{ width: '50%', height: '20vw' }}>
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 4, 5]} />
       <Model 
         objPath={queenPaths.obj} 
         mtlPath={queenPaths.mtl} 
         texturePath={queenPaths.texture} 
-        position={[6, -1, 0]} 
+        position={[5, -1, 0]} 
         rotation={rotation}
       />
       <OrbitControls enableZoom={false} />

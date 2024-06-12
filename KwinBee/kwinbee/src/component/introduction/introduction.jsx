@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import './introduction.css';
 import { useSpring, animated } from 'react-spring';
 import Scene from './chesspices'; // Make sure the path is correct
-import backimage from './chesstransback.png'
-const Counter = ({ number }) => {
+import backimage from './chesstransback.png';
+
+const Counter = ({ number, onAnimationEnd }) => {
   const props = useSpring({
     from: { count: 0 },
     to: { count: number },
     config: { duration: 2000 },
+    onRest: onAnimationEnd, // Call onAnimationEnd when animation finishes
   });
 
   return (
@@ -20,6 +22,7 @@ const Counter = ({ number }) => {
 const Introduction = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [animationComplete, setAnimationComplete] = useState(false); // New state for tracking animation completion
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -45,6 +48,11 @@ const Introduction = () => {
     };
   }, []);
 
+  // Callback function to set the animation as complete
+  const handleAnimationEnd = () => {
+    setAnimationComplete(true);
+  };
+
   return (
     <main>
       <section id="introduction">
@@ -53,9 +61,15 @@ const Introduction = () => {
             <h1>Every Pawn Has <br /> the Potential To<br /> Be A Queen.</h1>
             <p>Kwinbee, the chess world’s wake up<br /> call rooster, Brings you the best chess tutor!</p>
           </div>
-         
-            <Scene mousePosition={mousePosition} /> {/* Render the 3D scene */}
-       
+
+          {/* Render empbox or the 3D scene based on animationComplete state */}
+          {!animationComplete ? (
+            <div className='empbox'>
+              <p>Loading...</p>
+            </div>
+          ) : (
+            <Scene mousePosition={mousePosition} /> // Render the 3D scene
+          )}
 
           <div className="bookme poppins-bold-italic">
             <h1>Book A FREE <br />DEMO NOW</h1><br />
@@ -70,21 +84,21 @@ const Introduction = () => {
 
         <div className="stat" id="stats">
           <div className="stat-item">
-            <Counter number={students} />
+            <Counter number={students} onAnimationEnd={handleAnimationEnd} />
             <p>Students</p>
           </div>
           <div className="stat-item">
-            <Counter number={mentors} />
+            <Counter number={mentors} onAnimationEnd={handleAnimationEnd} />
             <p>Mentors</p>
           </div>
           <div className="stat-item">
-            <Counter number={yearsOfExperience} />
+            <Counter number={yearsOfExperience} onAnimationEnd={handleAnimationEnd} />
             <p>Years of Experience</p>
           </div>
         </div>
 
         <div id="overlay">
-        <img src={backimage}  />
+          <img src={backimage} />
         </div>
       </section>
     </main>
