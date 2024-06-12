@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navlink.css';
 import icon from './logo kwinbee.png';
+import hamburgerIcon from './icons8-hamburger-24 (1).png'; // Ensure this path is correct
 
 const Navbar = () => {
   const [backgroundColor, setBackgroundColor] = useState('rgba(0, 0, 0,0.9)');
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +29,10 @@ const Navbar = () => {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header id="change" style={{ backgroundColor }}>
       <div className="logo">
@@ -44,12 +50,12 @@ const Navbar = () => {
           <li><a href="#reviews" className={scrollPosition > 1000 ? "hover-color2" : "hover-color1"}>Reviews</a></li>
           <li><a href="contact.html" className={scrollPosition > 1000 ? "hover-color2" : "hover-color1"}>Contact Us</a></li>
         </ul>
-        <div className="toggle-button">
-          <i className="fa-solid fa-bars"></i>
-        </div>
+        <button className="toggle-button" onClick={toggleMenu}>
+          <img src={hamburgerIcon} alt="Menu" />
+        </button>
       </nav>
 
-      <div className="dropdown_menu">
+      <div className={`dropdown_menu ${menuOpen ? 'open' : ''}`}>
         <li><a href="#packages123" className={scrollPosition > 1000 ? "hover-color2" : "hover-color1"}>Course Quests</a></li>
         <li><a href="#achievers" className={scrollPosition > 1000 ? "hover-color2" : "hover-color1"}>Gallery</a></li>
         <li><a href="aboutus.html" className={scrollPosition > 1000 ? "hover-color2" : "hover-color1"}>About us</a></li>

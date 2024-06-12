@@ -3,7 +3,7 @@
 #introduction {
     z-index: 1;
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #fcab26;
     background-size: cover;
     background-position: center;
@@ -14,7 +14,6 @@
     overflow: hidden;
     color: #fff;
     background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
-    padding: 20px;
 }
 
 .poppins-bold-italic {
@@ -26,14 +25,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: center;
+    text-align: left;
     overflow: hidden;
     white-space: nowrap;
-}
-
-#introduction .intro-text h1 {
-    font-size: 2em;
-    margin: 10px 0;
 }
 
 #introduction p {
@@ -55,29 +49,32 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    flex-wrap: wrap;
+}
+
+.stat:last-child {
+    margin-bottom: 0;
 }
 
 .animated-number {
     font-weight: bold;
-    font-size: 48px;
+    font-size: 72px;
     color: rgba(255, 255, 255, 0.1);
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: white;
     margin: 0;
 }
 
 .stat-item p {
     margin-top: 10px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 800;
 }
 
 #chesspiece {
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: auto;
+    width: 300px; /* Increase width */
+    height: 400px; /* Increase height */
 }
 
 canvas {
@@ -85,10 +82,10 @@ canvas {
     height: 100%;
 }
 
+/* Styles for the empbox */
 .empbox {
-    height: 200px;
-    width: 100%;
-    max-width: 920px;
+    height: 410px;
+    width: 920px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,8 +93,8 @@ canvas {
 }
 
 .loader {
-    border: 7px solid #f3f3f3;
-    border-top: 7px solid #040607;
+    border: 7px solid #f3f3f3; /* Light grey border */
+    border-top: 7px solid #040607; /* Blue border for animation */
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -112,6 +109,7 @@ canvas {
     100% { transform: rotate(360deg); }
 }
 
+/* Center the loading text below the spinner */
 .empbox p {
     position: absolute;
     top: 60%;
@@ -120,90 +118,169 @@ canvas {
     font-weight: bold;
 }
 
-.bookme {
-    text-align: center;
-    margin-top: 20px;
+#herocol {
+    margin-top: 55px;
+    display: flex;
+    z-index: 25;
+    justify-content: space-evenly;
+    width: 80%;
 }
 
-.bookme h1 {
-    font-size: 1.5em;
-}
-
-.bookme p {
-    font-size: 1em;
-}
-
-.bookme-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #fcab26;
-    border: 2px solid white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.bookme-button a {
-    text-decoration: none;
+.intro-text h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
     color: white;
 }
 
+.bookme {
+    text-align: right;
+    padding-right: 12px;
+    border-right: 8px solid white;
+    white-space: nowrap;
+}
+
+.bookme h1 {
+    margin-bottom: 37px; /* Add margin-bottom to create space between lines */
+}
+
+.bookme p {
+    margin-bottom: 37px; /* Add margin-bottom to create space between lines */
+}
+
+/* Floating Contact Button Styles */
+.bookme-button {
+    text-align: center;
+    background-color: #000; /* Yellow */
+    color: #fff; /* Brown */
+    border: 3px solid #fff;
+    padding: 15px 30px; /* Adjust padding to fit text snugly */
+    filter: brightness(110%);
+    border-radius: 10px;
+    display: inline-block; /* Change to inline-block to fit content */
+    opacity: 1.0;
+    align-items: center;
+    z-index: 5;
+}
+
+.bookme-button a {
+    color: #fff; /* Brown */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Media Queries for Responsiveness */
+
+/* Medium screens (tablets, 768px and up) */
 @media (max-width: 768px) {
     #introduction {
-        padding: 10px;
+        padding: 20px;
     }
 
-    #introduction .intro-text h1 {
-        font-size: 1.5em;
+    #herocol {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
+    .intro-text {
+        text-align: center;
+        white-space: normal; /* Allow wrapping of text */
+    }
     #introduction p {
-        font-size: 1em;
+        font-size: 0.8em;
+    }
+    .intro-text h1 {
+        font-size: 2em;
+    }
+
+    .bookme {
+        text-align: center;
+        border-right: none;
+        padding-right: 0;
+        margin-top: 20px;
+    }
+
+    .bookme h1,
+    .bookme p {
+        margin-bottom: 20px;
     }
 
     .stat {
         flex-direction: column;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .animated-number {
+        font-size: 48px;
+    }
+
+    .bookme-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+/* Small screens (phones, less than 768px) */
+@media (max-width: 480px) {
+    #introduction {
+        height: auto; /* Allow the height to adjust based on content */
+    }
+
+    #herocol {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .intro-text {
+        text-align: center;
+        white-space: normal; /* Allow wrapping of text */
+        margin-bottom: 20px; /* Add some space between sections */
+    }
+
+    .intro-text h1 {
+        font-size: 1.2em; /* Reduced font size */
+        line-height: 1.2; /* Adjust line height for better spacing */
+    }
+
+    .intro-text p {
+        font-size: 0.9em; /* Reduced font size */
+    }
+
+    .bookme {
+        text-align: center;
+        border-right: none;
+        padding-right: 0;
+        margin-top: 20px;
+    }
+
+    .bookme h1,
+    .bookme p {
+        font-size: 1em;
+    }
+
+    .bookme-button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .stat {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px; /* Add some space between sections */
     }
 
     .animated-number {
         font-size: 36px;
-    }
-
-    #herocol {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .empbox {
-        width: 100%;
-    }
-
-    .bookme {
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .intro-text h1 {
-        font-size: 1.2em;
-    }
-
-    .intro-text p {
-        font-size: 0.9em;
-    }
-
-    .bookme h1 {
-        font-size: 1em;
-    }
-
-    .bookme p {
-        font-size: 0.8em;
-    }
-
-    .bookme-button {
-        padding: 8px 16px;
-        font-size: 0.9em;
     }
 
     .stat-item p {
@@ -212,6 +289,7 @@ canvas {
 
     .empbox {
         height: 150px;
+        width: 100%;
     }
 
     .loader {
