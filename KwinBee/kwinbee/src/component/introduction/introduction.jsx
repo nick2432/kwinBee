@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './introduction.css';
 import { useSpring, animated } from 'react-spring';
-import Scene from './chesspices'; // Make sure the path is correct
+import Scene from './chesspices'; // Ensure the path is correct
 import backimage from './chesstransback.png';
 
 const Counter = ({ number, onAnimationEnd }) => {
@@ -9,7 +9,7 @@ const Counter = ({ number, onAnimationEnd }) => {
     from: { count: 0 },
     to: { count: number },
     config: { duration: 2000 },
-    onRest: onAnimationEnd, // Call onAnimationEnd when animation finishes
+    onRest: onAnimationEnd,
   });
 
   return (
@@ -22,7 +22,7 @@ const Counter = ({ number, onAnimationEnd }) => {
 const Introduction = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [animationComplete, setAnimationComplete] = useState(false); // New state for tracking animation completion
+  const [animationComplete, setAnimationComplete] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -48,7 +48,6 @@ const Introduction = () => {
     };
   }, []);
 
-  // Callback function to set the animation as complete
   const handleAnimationEnd = () => {
     setAnimationComplete(true);
   };
@@ -62,14 +61,12 @@ const Introduction = () => {
             <p>Kwinbee, the chess world’s wake up<br /> call rooster, Brings you the best chess tutor!</p>
           </div>
 
-          {/* Render empbox or the 3D scene based on animationComplete state */}
           {!animationComplete ? (
-            <div className='empbox'>
-  <div className="loader"></div>
-</div>
-
+            <div className="empbox">
+              <div className="loader"></div>
+            </div>
           ) : (
-            <Scene mousePosition={mousePosition} /> // Render the 3D scene
+            <Scene mousePosition={mousePosition} />
           )}
 
           <div className="bookme poppins-bold-italic">
@@ -99,7 +96,7 @@ const Introduction = () => {
         </div>
 
         <div id="overlay">
-          <img src={backimage} />
+          <img src={backimage} alt="Background" />
         </div>
       </section>
     </main>

@@ -3,7 +3,7 @@
 #introduction {
     z-index: 1;
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #fcab26;
     background-size: cover;
     background-position: center;
@@ -14,6 +14,7 @@
     overflow: hidden;
     color: #fff;
     background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+    padding: 20px;
 }
 
 .poppins-bold-italic {
@@ -25,13 +26,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: left;
+    text-align: center;
     overflow: hidden;
     white-space: nowrap;
 }
 
+#introduction .intro-text h1 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
 #introduction p {
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .stat {
@@ -49,52 +55,49 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-.stat:last-child {
-    margin-bottom: 0;
+    flex-wrap: wrap;
 }
 
 .animated-number {
     font-weight: bold;
-    font-size: 72px;
+    font-size: 48px;
     color: rgba(255, 255, 255, 0.1);
-    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
     margin: 0;
 }
 
 .stat-item p {
     margin-top: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 800;
 }
 
 #chesspiece {
     display: flex;
     justify-content: center;
-    width: 300px; /* Increase width */
-    height: 400px; /* Increase height */
+    width: 100%;
+    height: auto;
 }
 
 canvas {
     width: 100%;
     height: 100%;
 }
-/* Styles for the empbox */
+
 .empbox {
-    height: 410px;
-    width: 920px;
+    height: 200px;
+    width: 100%;
+    max-width: 920px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-  }
-  
-  /* Spinner styles */
-  .loader {
-    border: 7px solid #f3f3f3; /* Light grey border */
-    border-top: 7px solid #040607; /* Blue border for animation */
+}
+
+.loader {
+    border: 7px solid #f3f3f3;
+    border-top: 7px solid #040607;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -102,20 +105,121 @@ canvas {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-  }
-  
-  /* Animation keyframes */
-  @keyframes spin {
+}
+
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
-  
-  /* Center the loading text below the spinner */
-  .empbox p {
+}
+
+.empbox p {
     position: absolute;
     top: 60%;
     font-size: 1.2rem;
     color: #333;
     font-weight: bold;
-  }
-  
+}
+
+.bookme {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bookme h1 {
+    font-size: 1.5em;
+}
+
+.bookme p {
+    font-size: 1em;
+}
+
+.bookme-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #fcab26;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.bookme-button a {
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    #introduction {
+        padding: 10px;
+    }
+
+    #introduction .intro-text h1 {
+        font-size: 1.5em;
+    }
+
+    #introduction p {
+        font-size: 1em;
+    }
+
+    .stat {
+        flex-direction: column;
+    }
+
+    .animated-number {
+        font-size: 36px;
+    }
+
+    #herocol {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .empbox {
+        width: 100%;
+    }
+
+    .bookme {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-text h1 {
+        font-size: 1.2em;
+    }
+
+    .intro-text p {
+        font-size: 0.9em;
+    }
+
+    .bookme h1 {
+        font-size: 1em;
+    }
+
+    .bookme p {
+        font-size: 0.8em;
+    }
+
+    .bookme-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .stat-item p {
+        font-size: 0.8rem;
+    }
+
+    .empbox {
+        height: 150px;
+    }
+
+    .loader {
+        width: 40px;
+        height: 40px;
+    }
+
+    .empbox p {
+        font-size: 1rem;
+    }
+}
